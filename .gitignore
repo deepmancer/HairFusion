@@ -1,0 +1,6 @@
+models/*.pth
+models/*.ckpt
+models/*.dat
+output
+
+logs/hairfusion
