@@ -49,6 +49,7 @@ Preprocess a given image and save the outputs in ./data/${dir_name}
 Extract DensePose of the images in ./data/${dir_name}/images and save them in ./data/${dir_name}/images-densepose
 - Installation
     ```bash
+    git clone https://github.com/facebookresearch/detectron2.git
     pip install opencv-python torchgeometry Pillow tqdm tensorboardX scikit-image scipy
     cd detectron2
     pip install -e .
