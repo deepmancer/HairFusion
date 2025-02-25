@@ -34,7 +34,7 @@ conda install -c anaconda ipython -y
 
 ## Sample Dataset
 
-sample data in ./data/test_data
+sample data in ./data/test
 
 ## Custom Data
 ### 1) Preprocessing
