@@ -4,3 +4,6 @@ models/*.dat
 output
 
 logs/hairfusion
+logs/
+
+data/
