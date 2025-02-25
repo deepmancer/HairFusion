@@ -79,7 +79,7 @@ python make_test_pairs.py --dir_path ./data/${dir_name}
 - VAE model:
   - download 'realisticVisionV51_v51VAE.ckpt' (3.97G) from [https://civitai.com/models/4201?modelVersionId=130072](https://civitai.com/models/4201?modelVersionId=130072) and save it into ./models
 - HairFusion:
-  - download and unzip ['hairfusion.zip' (8.4G)]() and save it into ./logs
+  - download and unzip ['hairfusion.zip' (8.4G)](https://drive.google.com/file/d/1QWB478Fc415CSqvDDe4ZczGTzh2FAXTO/view?usp=sharing) and save it into ./logs
 
 ## Inference
 ```
