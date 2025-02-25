@@ -78,7 +78,7 @@ python make_test_pairs.py --dir_path ./data/${dir_name}
 - VAE model:
   - download [realisticVisionV51_v51VAE.ckpt (3.97G)](https://drive.google.com/file/d/1eOJUILFwp5MEDX2sPnlpE7MR3_iuFClc/view?usp=sharing) into ./models
 - HairFusion:
-  - download and unzip 'hairfusion.zip' (9.5G) and save into ./logs
+  - download and unzip 'hairfusion.zip' (9.5G) and save it into ./logs
 
 ## Inference
 run ./scripts/test.sh
