@@ -1,6 +1,6 @@
-# HairFusion
+# HairFusion (AAAI2025)
 
-This repository is the official implementation of [HairFusion](https://arxiv.org/abs/2408.16450) (AAAI 2025).
+This repository is the official implementation of [What to Preserve and What to Transfer: Faithful, Identity-Preserving Diffusion-based Hairstyle Transfer](https://arxiv.org/abs/2408.16450).
 Note that this repository only includes the inference codes.
 
 
