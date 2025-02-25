@@ -78,7 +78,9 @@ python make_test_pairs.py --dir_path ./data/${dir_name}
   - download and unzip 'hairfusion.zip' (9.5G) and save it into ./logs
 
 ## Inference
-run ./scripts/test.sh
+```
+bash ./scripts/test.sh
+```
 
 ## Citation
 If you find our work useful for your research, please cite us:
