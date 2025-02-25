@@ -1,10 +1,6 @@
 # HairFusion
 
-This repository is the official implementation of [HairFusion](https://arxiv.org/abs/2408.16450).
-
-## Notice
-
-This repository only includes the inference codes.
+This repository is the official implementation of [HairFusion](https://arxiv.org/abs/2408.16450). Note that this repository only includes the inference codes.
 
 
 ## Installation
