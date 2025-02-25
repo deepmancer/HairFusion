@@ -36,7 +36,7 @@ sample data in ./data/test
 ## Custom Data
 ### 1) Preprocessing
 Preprocess a given image and save the outputs in ./data/${dir_name}
-- Download [face_segment16.pth (50.8MB)](https://drive.google.com/file/d/10GL030sNpVrxM9Ez0nXhHvs9-lsnZFGV/view?usp=sharing), [SGHM-ResNet50.pth (168.1MB)](https://drive.google.com/file/d/1Tl1Nif__Z6tWTyG_PNxA3pJC7f5KLAus/view?usp=sharing), and [shape_predictor_68_face_landmarks.dat (95.1MB)](https://drive.google.com/file/d/1g4jTab8cNVmF2AjDz2N3uXu0cMvsvlC3/view?usp=sharing) into ./models
+- Download [face_segment16.pth (50.8MB)](https://drive.google.com/file/d/10GL030sNpVrxM9Ez0nXhHvs9-lsnZFGV/view?usp=sharing) and [shape_predictor_68_face_landmarks.dat (95.1MB)](https://drive.google.com/file/d/1g4jTab8cNVmF2AjDz2N3uXu0cMvsvlC3/view?usp=sharing) into ./models
 - run 
   ```bash
   CUDA_VISIBLE_DEVICES=0 python preprocess.py --img_path ${image_path} --save_dir_name ${dir_name} --crop_scale ${crop_scale}
@@ -75,7 +75,7 @@ python make_test_pairs.py --dir_path ./data/${dir_name}
 - VAE model:
   - download [realisticVisionV51_v51VAE.ckpt (3.97G)](https://drive.google.com/file/d/1eOJUILFwp5MEDX2sPnlpE7MR3_iuFClc/view?usp=sharing) into ./models
 - HairFusion:
-  - download and unzip 'hairfusion.zip' (9.5G) and save it into ./logs
+  - download and unzip [hairfusion.zip (9.5G)](https://drive.google.com/file/d/1eOJUILFwp5MEDX2sPnlpE7MR3_iuFClc/view?usp=sharing) and save it into ./logs
 
 ## Inference
 ```
