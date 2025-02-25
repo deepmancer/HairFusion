@@ -82,14 +82,14 @@ run ./scripts/test.sh
 
 ## Citation
 If you find our work useful for your research, please cite us:
-'''
+```
 @inproceedings{chung2025hairfusion,
   title={What to Preserve and What to Transfer: Faithful, Identity-Preserving Diffusion-based Hairstyle Transfer},
   author={Chung, Chaeyeon and Park, Sunghyun and Kim, Jeongho and Choo, Jaegul},
   booktitle={The Association for the Advancement of Artificial Intelligence},
   year={2025}
 }
-'''
+```
 
 ## License
 Licensed under the CC BY-NC-SA 4.0 license [https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
