@@ -73,9 +73,9 @@ python make_test_pairs.py --dir_path ./data/${dir_name}
 
 ## Checkpoints
 - VAE model:
-  - download [realisticVisionV51_v51VAE.ckpt (3.97G)](https://drive.google.com/file/d/1eOJUILFwp5MEDX2sPnlpE7MR3_iuFClc/view?usp=sharing) into ./models
+  - download 'realisticVisionV51_v51VAE.ckpt' (3.97G) from [https://civitai.com/models/4201?modelVersionId=130072](https://civitai.com/models/4201?modelVersionId=130072) and save it into ./models
 - HairFusion:
-  - download and unzip [hairfusion.zip (9.5G)](https://drive.google.com/file/d/1eOJUILFwp5MEDX2sPnlpE7MR3_iuFClc/view?usp=sharing) and save it into ./logs
+  - download and unzip ['hairfusion.zip' (9.5G)](https://drive.google.com/file/d/1eOJUILFwp5MEDX2sPnlpE7MR3_iuFClc/view?usp=sharing) and save it into ./logs
 
 ## Inference
 ```
