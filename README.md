@@ -1,6 +1,7 @@
 # HairFusion
 
-This repository is the official implementation of [HairFusion](https://arxiv.org/abs/2408.16450). Note that this repository only includes the inference codes.
+This repository is the official implementation of [HairFusion](https://arxiv.org/abs/2408.16450) (AAAI 2025).
+Note that this repository only includes the inference codes.
 
 
 ## Environments
@@ -78,3 +79,17 @@ python make_test_pairs.py --dir_path ./data/${dir_name}
 
 ## Inference
 run ./scripts/test.sh
+
+## Citation
+If you find our work useful for your research, please cite us:
+'''
+@inproceedings{chung2025hairfusion,
+  title={What to Preserve and What to Transfer: Faithful, Identity-Preserving Diffusion-based Hairstyle Transfer},
+  author={Chung, Chaeyeon and Park, Sunghyun and Kim, Jeongho and Choo, Jaegul},
+  booktitle={The Association for the Advancement of Artificial Intelligence},
+  year={2025}
+}
+'''
+
+## License
+Licensed under the CC BY-NC-SA 4.0 license [https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
