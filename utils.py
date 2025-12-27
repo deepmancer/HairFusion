@@ -259,7 +259,9 @@ def get_nth(keypoint, frame_shape, lw=None, black=False, img=None, head=None, ha
 
     fig.canvas.draw()
 
-    nth = Image.frombuffer('RGB', fig.canvas.get_width_height(), fig.canvas.tostring_rgb(), 'raw', 'RGB', 0, 1)
+    # Use buffer_rgba() instead of deprecated tostring_rgb()
+    buf = np.asarray(fig.canvas.buffer_rgba())
+    nth = Image.fromarray(buf[:, :, :3])  # Remove alpha channel, keep RGB
 
     plt.close(fig)
 

@@ -45,15 +45,33 @@ def run():
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 
     img_list = os.listdir(IMAGES_DIR)
+    img_list = [f for f in img_list if f.lower().endswith(('.png', '.jpg', '.jpeg'))]
+    
+    if len(img_list) == 0:
+        print(f"No images found in {IMAGES_DIR}")
+        print("Please run preprocess.py first to generate cropped images.")
+        return
+    
+    print(f"Found {len(img_list)} images to process")
 
     k_face_size_mean = 0.26
 
-    for face_img_name in img_list:
+    for idx, face_img_name in enumerate(img_list, start=1):
+        print(f"[{idx}/{len(img_list)}] Processing {face_img_name}...")
 
         dp_path = os.path.join(DP_DIR, face_img_name)
-        dp_path = os.path.splitext(dp_path)[0] + '.jpg'
-        if not os.path.isfile(dp_path):
-            raise Exception(f'There is no DensePose for {face_img_name}. Please extract DensePose first before preprocessing.')
+        # Try both .jpg and .png extensions for DensePose
+        dp_path_jpg = os.path.splitext(dp_path)[0] + '.jpg'
+        dp_path_png = os.path.splitext(dp_path)[0] + '.png'
+        
+        if os.path.isfile(dp_path_jpg):
+            dp_path = dp_path_jpg
+        elif os.path.isfile(dp_path_png):
+            dp_path = dp_path_png
+        else:
+            print(f"  WARNING: No DensePose found for {face_img_name}, skipping...")
+            print(f"  (Looked for {dp_path_jpg} and {dp_path_png})")
+            continue
 
         # load image and keypoints
         crop_face_path = os.path.join(IMAGES_DIR, face_img_name)
@@ -116,8 +134,14 @@ def run():
         # hair_mask_original = transform(hair_mask_original)
         hair_mask_original_1ch = torch.sum(mask_hair_dil, axis=0, keepdims=True)
         hair_mask_1ch = (hair_mask_original_1ch > 0.2) * 1
-        start_x_hair, end_x_hair = torch.min(hair_mask_1ch.nonzero()[:, 2]), torch.max(
-            hair_mask_1ch.nonzero()[:, 2])
+        
+        # Check if hair mask is empty
+        hair_nonzero = hair_mask_1ch.nonzero()
+        if hair_nonzero.numel() == 0:
+            print(f"  WARNING: No hair detected in mask for {face_img_name}, skipping...")
+            continue
+            
+        start_x_hair, end_x_hair = torch.min(hair_nonzero[:, 2]), torch.max(hair_nonzero[:, 2])
         l_start_x = min(l_start_x, start_x_hair)
         r_end_x = max(r_end_x, end_x_hair)
 
@@ -142,6 +166,8 @@ def run():
         # save agnostic and agnostic mask
         save_image(agnostic, os.path.join(AGN_DIR , face_img_name), normalize=True)
         save_image(agnostic_mask, os.path.join(AGN_MASK_DIR , face_img_name), normalize=True)
+    
+    print(f"\nDone! Agnostic images saved to {AGN_DIR}")
 
 
 if __name__ == '__main__':
